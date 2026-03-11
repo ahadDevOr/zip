@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESSIONS VAULT | 76 IDs</title>
+    <style>
+        :root { --primary: #00ff88; --bg: #0a0a0b; --card: #16161a; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .vault-card { background: var(--card); padding: 40px; border-radius: 20px; border: 1px solid #333; width: 350px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: 0.5s; position: relative; }
+        .vault-card:hover { border-color: var(--primary); box-shadow: 0 0 30px rgba(0,255,136,0.2); }
+        h2 { font-size: 1.5rem; letter-spacing: 3px; margin-bottom: 30px; color: var(--primary); text-shadow: 0 0 10px rgba(0,255,136,0.3); }
+        .input-group { position: relative; margin-bottom: 25px; }
+        input { width: 90%; padding: 15px; background: #000; border: 1px solid #444; border-radius: 10px; color: var(--primary); text-align: center; font-size: 18px; letter-spacing: 5px; outline: none; transition: 0.3s; }
+        input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(0,255,136,0.1); }
+        button { width: 100%; padding: 15px; background: var(--primary); color: #000; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        button:hover { background: #00cc6e; transform: translateY(-3px); }
+        #hiddenContent { display: none; animation: fadeIn 0.8s ease-in-out; }
+        .stats { display: flex; justify-content: space-around; margin: 20px 0; font-size: 14px; color: #888; border-top: 1px solid #333; padding-top: 20px; }
+        .btn-link { display: block; padding: 12px; margin-top: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .dl-zip { background: #222; color: var(--primary); border: 1px solid var(--primary); }
+        .tg-link { background: #24A1DE; color: white; }
+        .btn-link:hover { opacity: 0.8; transform: scale(1.02); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Background Animation */
+        .bg-dots { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.1; background-image: radial-gradient(var(--primary) 1px, transparent 1px); background-size: 30px 30px; }
+    </style>
+</head>
+<body>
+
+<div class="bg-dots"></div>
+
+<div class="vault-card">
+    <div id="loginSection">
+        <h2>🔒 PRIVATE VAULT</h2>
+        <div class="input-group">
+            <input type="password" id="pin" placeholder="••••••">
+        </div>
+        <button onclick="unlock()">ACCESS TERMINAL</button>
+    </div>
+
+    <div id="hiddenContent">
+        <h2 style="color: #fff;">✅ AUTHORIZED</h2>
+        <div class="stats">
+            <div><span>📂 Files:</span> <br><strong>76 Sessions</strong></div>
+            <div><span>📦 Size:</span> <br><strong>~8.6 MB</strong></div>
+        </div>
+        
+        <a href="TOTAL_76_SESSIONS_BACKUP.zip" class="btn-link dl-zip" download>📥 DOWNLOAD ZIP (76 IDs)</a>
+        <a href="https://t.me/TheZipFile2/3" target="_blank" class="btn-link tg-link">🔘 TELEGRAM BACKUP</a>
+        
+        <p style="font-size: 12px; color: #555; margin-top: 20px;">System: Rangpur ATI / feru-z</p>
+    </div>
+</div>
+
+<script>
+    function unlock() {
+        const pin = document.getElementById('pin').value;
+        if (pin === "706609") {
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('hiddenContent').style.display = 'block';
+            document.querySelector('.vault-card').style.borderColor = '#00ff88';
+        } else {
+            alert("❌ ACCESS DENIED: WRONG PIN");
+        }
+    }
+    // Enter key support
+    document.getElementById("pin").addEventListener("keyup", function(e) {
+        if (e.key === "Enter") unlock();
+    });
+</script>
+
+</body>
+</html>
